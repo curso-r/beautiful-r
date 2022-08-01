@@ -43,3 +43,6 @@ format:
     theme: flatly
   pdf:
     documentclass: scrreprt
+
+execute:
+  freeze: auto
