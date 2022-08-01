@@ -1,3 +1,0 @@
-# Packages {#sec-packages}
-
-Empty.

@@ -1,3 +1,0 @@
-# Shiny {#sec-shiny}
-
-Empty.

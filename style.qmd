@@ -1,3 +1,0 @@
-# Style {#sec-style}
-
-Empty.

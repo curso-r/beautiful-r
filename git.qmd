@@ -1,3 +1,0 @@
-# Git {#sec-git}
-
-Empty.

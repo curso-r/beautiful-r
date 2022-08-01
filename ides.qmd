@@ -1,3 +1,0 @@
-# IDEs {#sec-ides}
-
-Empty.

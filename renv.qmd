@@ -1,3 +1,0 @@
-# Renv {#sec-renv}
-
-Empty.

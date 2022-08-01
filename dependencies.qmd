@@ -1,3 +1,0 @@
-# Dependencies {#sec-dependencies}
-
-Empty.
