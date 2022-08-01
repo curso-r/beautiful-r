@@ -8,6 +8,7 @@ book:
   date-format: YYYY-MM-DD
   chapters:
     - index.qmd
+    - introduction.qmd
 
     - part: structure.qmd
       chapters:
