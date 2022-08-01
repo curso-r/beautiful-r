@@ -1,5 +1,27 @@
 # Preface {.unnumbered}
 
-This is a Quarto book.
+If you came here of your own volition, you're probably an R programmer. Maybe
+you're still a novice, maybe you've already had your fair share of `cannot
+coerce type 'closure'` errors; either way, you're trying to grapple with this (at
+the time of writing) almost thirty years-old programming language.
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+It's tough, I know. Take a deep breath. I've got you covered.
+
+_Beautiful R_ is a book about what R does right: its goal is to both help you
+succeed at programming R, and showcase this quirky little language's full
+potential. Think of it as the antithesis to
+[_The R Inferno_](https://www.burns-stat.com/pages/Tutor/R_inferno.pdf).
+
+The book is divided into three sections in increasing order of complexity:
+
+1. **Structure** explains how to create and use R projects effectively. Learn
+how to setup your environment, use IDEs responsibly, and never lose a file
+again.
+
+1. **Patterns** is full of tips on programming R well. Transform your projects
+into packages, avoid silly mistakes by creating unit tests, and learn how to
+write good R code.
+
+1. **Style** covers the last step in the ladder: making your code clean, easy to
+understand, and beautiful. Once you are able to consistently write good code,
+it's time to start writing _great_ code.

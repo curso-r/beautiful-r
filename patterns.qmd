@@ -1,0 +1,3 @@
+# Patterns {#sec-patterns}
+
+Empty.

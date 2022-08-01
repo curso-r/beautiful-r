@@ -1,0 +1,3 @@
+# Structure {#sec-structure}
+
+Empty.

@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Beautiful R",
     "section": "",
-    "text": "This is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books."
+    "text": "If you came here of your own volition, you’re probably an R programmer. Maybe you’re still a novice, maybe you’ve already had your fair share of cannot coerce type 'closure' errors; either way, you’re trying to grapple with this (at the time of writing) almost thirty years-old programming language.\nIt’s tough, I know. Take a deep breath. I’ve got you covered.\nBeautiful R is a book about what R does right: its goal is to both help you succeed at programming R, and showcase this quirky little language’s full potential. Think of it as the antithesis to The R Inferno.\nThe book is divided into three sections in increasing order of complexity:\n\nStructure explains how to create and use R projects effectively. Learn how to setup your environment, use IDEs responsibly, and never lose a file again.\nPatterns is full of tips on programming R well. Transform your projects into packages, avoid silly mistakes by creating unit tests, and learn how to write good R code.\nStyle covers the last step in the ladder: making your code clean, easy to understand, and beautiful. Once you are able to consistently write good code, it’s time to start writing great code."
   },
   {
     "objectID": "intro.html",
@@ -26,5 +26,145 @@
     "title": "References",
     "section": "",
     "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Introduction",
+    "section": "",
+    "text": "Tmp"
+  },
+  {
+    "objectID": "patterns.html",
+    "href": "patterns.html",
+    "title": "Patterns",
+    "section": "",
+    "text": "Empty."
+  },
+  {
+    "objectID": "code.html",
+    "href": "code.html",
+    "title": "Code",
+    "section": "",
+    "text": "Tmp"
+  },
+  {
+    "objectID": "structure.html",
+    "href": "structure.html",
+    "title": "Structure",
+    "section": "",
+    "text": "Empty."
+  },
+  {
+    "objectID": "style.html",
+    "href": "style.html",
+    "title": "Style",
+    "section": "",
+    "text": "Empty."
+  },
+  {
+    "objectID": "environment.html",
+    "href": "environment.html",
+    "title": "1  Environment",
+    "section": "",
+    "text": "Empty."
+  },
+  {
+    "objectID": "paths.html",
+    "href": "paths.html",
+    "title": "2  Paths",
+    "section": "",
+    "text": "Empty."
+  },
+  {
+    "objectID": "ides.html",
+    "href": "ides.html",
+    "title": "3  IDEs",
+    "section": "",
+    "text": "Empty."
+  },
+  {
+    "objectID": "git.html",
+    "href": "git.html",
+    "title": "4  Git",
+    "section": "",
+    "text": "Empty."
+  },
+  {
+    "objectID": "packages.html",
+    "href": "packages.html",
+    "title": "5  Packages",
+    "section": "",
+    "text": "Empty."
+  },
+  {
+    "objectID": "dependencies.html",
+    "href": "dependencies.html",
+    "title": "6  Dependencies",
+    "section": "",
+    "text": "Empty."
+  },
+  {
+    "objectID": "data.html",
+    "href": "data.html",
+    "title": "7  Data",
+    "section": "",
+    "text": "Empty."
+  },
+  {
+    "objectID": "testing.html",
+    "href": "testing.html",
+    "title": "8  Testing",
+    "section": "",
+    "text": "Empty."
+  },
+  {
+    "objectID": "renv.html",
+    "href": "renv.html",
+    "title": "9  Renv",
+    "section": "",
+    "text": "Empty."
+  },
+  {
+    "objectID": "ci-cd.html",
+    "href": "ci-cd.html",
+    "title": "10  CI/CD",
+    "section": "",
+    "text": "Empty."
+  },
+  {
+    "objectID": "beauty.html",
+    "href": "beauty.html",
+    "title": "11  Beauty",
+    "section": "",
+    "text": "Empty."
+  },
+  {
+    "objectID": "pipe.html",
+    "href": "pipe.html",
+    "title": "12  Pipe",
+    "section": "",
+    "text": "Empty."
+  },
+  {
+    "objectID": "functions.html",
+    "href": "functions.html",
+    "title": "13  Functions",
+    "section": "",
+    "text": "Empty."
+  },
+  {
+    "objectID": "linting.html",
+    "href": "linting.html",
+    "title": "14  Linting",
+    "section": "",
+    "text": "Empty."
+  },
+  {
+    "objectID": "shiny.html",
+    "href": "shiny.html",
+    "title": "15  Shiny",
+    "section": "",
+    "text": "Empty."
   }
 ]

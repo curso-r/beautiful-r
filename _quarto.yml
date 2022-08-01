@@ -8,8 +8,31 @@ book:
   date-format: YYYY-MM-DD
   chapters:
     - index.qmd
-    - intro.qmd
-    - summary.qmd
+
+    - part: structure.qmd
+      chapters:
+        - environment.qmd
+        - paths.qmd
+        - ides.qmd
+        - git.qmd
+
+    - part: patterns.qmd
+      chapters:
+        - packages.qmd
+        - dependencies.qmd
+        - data.qmd
+        - testing.qmd
+        - renv.qmd
+        - ci-cd.qmd
+
+    - part: style.qmd
+      chapters:
+        - beauty.qmd
+        - pipe.qmd
+        - functions.qmd
+        - linting.qmd
+        - shiny.qmd
+
     - references.qmd
 
 bibliography: references.bib
@@ -19,6 +42,3 @@ format:
     theme: flatly
   pdf:
     documentclass: scrreprt
-
-
-
