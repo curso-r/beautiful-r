@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.37">
+<meta name="generator" content="quarto-1.0.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -370,7 +370,7 @@ Note
 </section>
 <section id="be-nice-to-humans" class="level3" data-number="1.1.2">
 <h3 data-number="1.1.2" class="anchored" data-anchor-id="be-nice-to-humans"><span class="header-section-number">1.1.2</span> Be nice to humans</h3>
-<p>Humans need context, so short and vague file names are to be avoided. A good practice is to begin the file name with it’s “type” (e.g.&nbsp;analysis, note, report, etc.) and then append a meaningful description.</p>
+<p>Humans need context, so short and vague file names are to be avoided. A good practice is to begin the file name with its “type” (e.g.&nbsp;analysis, note, report, etc.) and then append a meaningful description.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode txt code-with-copy"><code class="sourceCode default"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a># Good</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>analysis01_descriptive-statistics.R</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>notes02_tentative-write-up.docx</span>
@@ -405,7 +405,7 @@ Note
 <section id="profile" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="profile"><span class="header-section-number">1.2</span> Profile</h2>
 <p>Most users don’t know about a little file called <code>.Rprofile</code> (the dot at the beginning makes the file invisible). Your <code>.Rprofile</code> contains R code that is run every time you open R, so this is a good place to set some options and configurations. It’s also an amazing place to make your analyses impossible to reproduce.</p>
-<p>If you’ve never used this feature of R, I suggest you stay this way until you are a seasoned veteran in the language. A good tip for using you <code>.Rprofile</code> correctly is to never put anything that you would write in a script there.</p>
+<p>If you’ve never used this feature of R, I suggest you stay this way until you are a seasoned veteran in the language. A good tip for using your <code>.Rprofile</code> correctly is to never put anything that you would write in a script there.</p>
 <p>Here is a good example of an <code>.Rprofile</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set repo</span></span>
@@ -420,10 +420,10 @@ Note
 </section>
 <section id="versions" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="versions"><span class="header-section-number">1.3</span> Versions</h2>
-<p>To me, this is the most important part of the chapter. You can fix all of your file names and remove everything from your <code>.Rprofile</code>; if you don’t update system, it’s all for naught.</p>
-<p>R is a relatively old language, so it has been updated <a href="https://cran.r-project.org/bin/windows/base/old/">many times</a> since launch. Every two to three months, the R Core Team releases a new version with many improvements and bug fixes. These updates can be very minor, but sometimes there are truly exciting new features. in R 4.1.0, for example, the native pipe (<code>|&gt;</code>) was introduced, pretty much retiring magrittr.</p>
+<p>To me, this is the most important part of the chapter. You can fix all of your file names and remove everything from your <code>.Rprofile</code>; if you don’t update your system, it’s all for naught.</p>
+<p>R is a relatively old language, so it has been updated <a href="https://cran.r-project.org/bin/windows/base/old/">many times</a> since its launch. Every two to three months, the R Core Team releases a new version with many improvements and bug fixes. These updates can be very minor, but sometimes there are truly exciting new features. in R 4.1.0, for example, the native pipe (<code>|&gt;</code>) was introduced, pretty much retiring magrittr.</p>
 <p>This means that, if you don’t upgrade your R installation, you’ll be missing out on the evolution of the language and leaving your system vulnerable to known bugs.</p>
-<p>The same is true for packages, the life and blood of R. Packages change much more and much faster than R itself, since they’re not always worried about backwards compatibility. If you leave your packages to rot, expect your scripts to stop working on other peoples machines, a harder time googling bugs, and to get stuck with old code.</p>
+<p>The same is true for packages, the life and blood of R. Packages change much more and much faster than R itself, since they’re not always worried about backwards compatibility. If you leave your packages to rot, expect your scripts to stop working on other peoples’ machines, to have harder time googling bugs, and to get stuck with old code.</p>
 <p>My advice is then the following:</p>
 <ol type="1">
 <li><p>Every few weeks make sure to run <code>update.packages()</code> to update your packages.</p></li>
