@@ -28,6 +28,9 @@ jobs:
           packages: |
             jsonlite
 
+      - name: Install tinytex
+        run: quarto install tool tinytex
+
       - name: Publish
         uses: quarto-dev/quarto-actions/publish@v2
         with:
