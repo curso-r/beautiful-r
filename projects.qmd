@@ -1,0 +1,3 @@
+# Projects {#sec-projects}
+
+Empty.
