@@ -89,7 +89,7 @@ precedence over the other rules.
 ### Be nice to humans
 
 Humans need context, so short and vague file names are to be avoided. A good
-practice is to begin the file name with it's "type" (e.g. analysis, note,
+practice is to begin the file name with its "type" (e.g. analysis, note,
 report, etc.) and then append a meaningful description.
 
 ```txt
@@ -147,7 +147,7 @@ configurations. It's also an amazing place to make your analyses impossible to
 reproduce.
 
 If you've never used this feature of R, I suggest you stay this way until you
-are a seasoned veteran in the language. A good tip for using you `.Rprofile`
+are a seasoned veteran in the language. A good tip for using your `.Rprofile`
 correctly is to never put anything that you would write in a script there.
 
 Here is a good example of an `.Rprofile`:
@@ -172,10 +172,10 @@ If you _really_ want to add something to your `.Rprofile`, you can install the
 
 To me, this is the most important part of the chapter. You can fix all of your
 file names and remove everything from your `.Rprofile`; if you don't update
-system, it's all for naught.
+your system, it's all for naught.
 
 R is a relatively old language, so it has been updated
-[many times](https://cran.r-project.org/bin/windows/base/old/) since launch.
+[many times](https://cran.r-project.org/bin/windows/base/old/) since its launch.
 Every two to three months, the R Core Team releases a new version with many
 improvements and bug fixes. These updates can be very minor, but sometimes there
 are truly exciting new features. in R 4.1.0, for example, the native pipe (`|>`)
@@ -188,8 +188,8 @@ bugs.
 The same is true for packages, the life and blood of R. Packages change much
 more and much faster than R itself, since they're not always worried about
 backwards compatibility. If you leave your packages to rot, expect your scripts
-to stop working on other peoples machines, a harder time googling bugs, and to
-get stuck with old code.
+to stop working on other peoples' machines, to have harder time googling bugs,
+and to get stuck with old code.
 
 My advice is then the following:
 
