@@ -156,6 +156,140 @@ knitr::include_graphics("images/rstudio_settings_screenshot.webp")
 
 ## VS Code
 
+Visual Studio Code, also known as VS Code, is the new kid on the block. Released
+by Microsoft in 2015, it quickly became the most popular code editor in the
+world: it went from being used by 7% of developers in 2016[^1] to 74% by
+2022[^2].
+
+[^1]: [StackOverflow Developer Survey 2016](https://insights.stackoverflow.com/survey/2016#technology-development-environments)
+
+[^2]: [StackOverflow Developer Survey 2022](https://survey.stackoverflow.co/2022/#section-most-popular-technologies-integrated-development-environment)
+
+```{r}
+#| echo: false
+#| fig-cap: >
+#|   [R in Visual Studio Code](https://code.visualstudio.com/docs/languages/r)
+
+knitr::include_graphics("images/vscode_screenshot.webp")
+```
+
+When compared to RStudio, VS Code is much less plug and play. By default it
+doesn't come bundled with tools for programming in R and you might have to learn
+some shortcuts, but it does have its benefits. So much so that RStudio Workbench
+allows you to choose between their own IDE and VS Code when creating a new
+project.
+
+### Pros and cons
+
+In my opinion, the biggest argument in favor of using VS Code is its
+flexibility. You can "pop the hood" of the IDE and edit every minute setting of
+its interface, creating new shortcuts and snippets, editing the configuration
+files directly, and even create extensions that enhance your development
+workflow.
+
+Unlike RStudio's addins, VS Code's extensions can profoundly alter your
+development environment. There is an
+[extension marketplace](https://marketplace.visualstudio.com/vscode) through
+which you can download anything from aesthetic themes to debuggers, from spell
+checkers to support for additional languages. While I'm writing this very
+sentence, I have multiple extensions working on the background: one to
+automatically format paragraphs to my desired line width, one to fix my spelling
+mistakes, and one for [Quarto](https://quarto.org/) code completion (made by
+RStudio!).
+
+VS Code's interface is also extremely flexible. Text files, R consoles, terminal
+emulators, plot viewers, and web browsers (e.g. Shiny preview windows) are all
+tabs that can be arranged however you like. On the left side you also get a
+powerful file explorer and shortcuts an integrated git client, a global search
+tool, and every extension you choose to pin (e.g. R's workspace viewer).
+
+I personally chose VS Code as my daily driver, but it is not without its flaws.
+First and foremost, it does not come with R support out of the box and it is up
+to each individual developer to install the necessary extensions to make it
+work. There is an official
+[tutorial](https://code.visualstudio.com/docs/languages/r), but, in order to get
+the most out of VS Code, you really must follow the extra steps described at the
+end of the **Getting Started** section; this will, however, involve installing
+a new R console through Python and editing your `.Rprofile`.
+
+Unlike RStudio, VS Code's R console is not integrated to the rest of the IDE.
+This solves the issues with multi-core processing and full crases, but it
+creates other problems; for one, you have to start the R console every time you
+open VS Code, which can get boring pretty fast. The plot viewer is also a little
+clunky, so you have to be smart with your window management if you don't want
+gigantic plots taking up half of your screen.
+
+To sum up, VS Code is a modern and customizable IDE that can work with any
+language you can imagine. This wholistic approach means that you get really cool
+features, but also that you loose some tighter integrations which RStudio alone
+can offer.
+
+### Tips
+
+As alluded to above, you should follow VS Code's tutorial on how to setup
+support for R. Make sure to read the full instructions for your operating
+system because they are different for each OS
+([Windows](https://github.com/REditorSupport/vscode-R/wiki/Installation:-Windows),
+[macOS](https://github.com/REditorSupport/vscode-R/wiki/Installation:-macOS),
+and [Linux](https://github.com/REditorSupport/vscode-R/wiki/Installation:-Linux))!
+
+You might also want to configure some settings and shortcuts; this is not
+trivial, but it will help with some minor hiccups for R users. First, open your
+**Command Palette** with `Ctrl+Shift+P` (`Cmd+Shift+P` on Mac) and select the
+**Preferences: Open User Settings (JSON)** command. Your `settings.json` should
+open and I suggest you replaces its contents with the following, making sure not
+to remove the settings you have already added during radian's setup:
+
+```json
+{
+    "editor.minimap.enabled": false,
+    "workbench.startupEditor": "none",
+    "editor.tabSize": 2,
+    "files.defaultLanguage": "r",
+    "terminal.integrated.defaultLocation": "editor",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "files.trimTrailingWhitespace": true,
+    "editor.rulers": 80,
+
+    // Radian setup! Keep yours as is!
+    "r.rterm.mac": "/opt/homebrew/bin/radian",
+    "r.bracketedPaste": true,
+}
+```
+
+On the **Command Palette** again, select the
+**Preferences: Open Keyboards Shortcut (JSON)** command. It will open a file
+where you can define some shortcuts that you like. Mine looks like this (make
+sure to swap `cmd` with `ctrl` wherever necessary):
+
+```json
+[
+    // RStudio key bindings
+    {
+        "key": "cmd+shift+m",
+        "command": "type",
+        "args": { "text": " |>" },
+        "when": "editorTextFocus && editorLangId == 'r'"
+    },
+    {
+        "key": "alt+-",
+        "command": "type",
+        "args": { "text": " <- " },
+        "when": "editorTextFocus && editorLangId == 'r'"
+    },
+    {
+        "key": "shift+cmd+l",
+        "command": "r.loadAll"
+    },
+]
+```
+
 ## Emacs
+
+```{r}
+#| echo: false
+
+knitr::include_graphics("images/emacs_screenshot.webp")
+```
 
 ## Neovim
