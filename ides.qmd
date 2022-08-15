@@ -1,3 +1,161 @@
 # IDEs {#sec-ides}
 
-Empty.
+As discussed in [Chapter -@sec-environment], coding doesn't happen in a vacuum.
+One important part of a programmer's workflow is their integrated development
+environment, also known as IDE. In short, an IDE provides tools that aid in
+software development, like debuggers, compilers, interpreters, syntax
+highlighters, and much more.
+
+The choice of IDE is up to the developer. Some enjoy having more tools at their
+disposal, while other prefer simplicity and portability. When talking about R,
+there are four popular choices:
+[RStudio](https://www.rstudio.com/products/rstudio/),
+[VS Code](https://code.visualstudio.com),
+[Emacs](https://www.gnu.org/software/emacs/), and [Neovim](https://neovim.io/).
+
+::: callout-note
+## Note
+
+Strictly speaking, Emacs and Neovim are not fully fledged IDEs, instead being
+classified as [text editors](https://en.wikipedia.org/wiki/Text_editor) (a
+difference that will be explained later in the chapter). For the sake of
+simplicity, I'll be lumping these two together with RStudio and VS Code.
+:::
+
+In the coming sections I'll talk about each of them, their advantages and
+disadvantages, as well as a few tips on how to make the most out of their
+features.
+
+## RStudio
+
+RStudio is, by far, the most popular IDE for R. It was first released in 2011
+and is maintained by [RStudio, PBC](https://www.rstudio.com/) (now
+[Posit, PBC](https://posit.co/)), a company whose contribution to the R
+community is hard to overestimate.
+
+```{r}
+#| echo: false
+#| fig-cap: >
+#|   [RStudio](https://en.wikipedia.org/wiki/RStudio#/media/File:RStudio_IDE_screenshot.png)
+#|   by cdhowe / [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+
+knitr::include_graphics("images/rstudio_screenshot.webp")
+```
+
+Unlike the other software applications featured here, RStudio was made for R.
+For the majority of its life, it only supported direct code execution and
+extensions associated with the language, e.g., RMarkdown and Shiny. This only
+changed in the past few years with additional support for Python and Jupyter
+notebooks through the [reticulate](https://rstudio.github.io/reticulate/)
+package.
+
+### Pros and cons
+
+Given its dedication to the R environment, RStudio is probably the easiest to
+use. There is no setup and no extensions to install; it simply works.
+
+It's integrated R console allows you to, out of the box, execute code directly.
+The fact that the interface is so tightly coupled with R means that you get
+features that you basically can't get anywhere else: RMarkdown integration,
+memory monitoring, database connections, etc.
+
+RStudio is also deeply connected to its company's other products. One of this
+IDEs best features is its web version called RStudio Server; there is a free and
+a paid version, but both allow you to basically access a remote server through
+RStudio's interface. This means that you can use the processing power of a
+different machine and access it via the web on your local computer.
+
+And I haven't even scratched the surface of RStudio's integrations! There is
+also [Team](https://www.rstudio.com/products/team/),
+[Workbench](https://www.rstudio.com/products/workbench/),
+[Connect](https://www.rstudio.com/products/connect/) and
+[Package Manager](https://www.rstudio.com/products/package-manager/), enterprise
+solutions that can be accessed right through the IDE. Last but not least,
+[Shinyapps.io](https://www.rstudio.com/products/shinyapps/), RStudio's Shiny
+hosting solution, gets a dedicated one-click deployment feature on RStudio.
+
+However, despite all of these facilities, some people would argue that RStudio
+is lacking in customizability and extensibility. At the time of writing, its
+interface is stuck as quadrants, each with multiple tabs that you can't close or
+rearrange. The way content is structured is, in general, a little clunky, with a
+lot of space devoted to tools very few people use.
+
+If you use RStudio for as long as I have, you'll also catch on to a handful of
+minor quality of life issues. Here is a list of a few drawbacks of this IDE that
+add some friction to one's development workflow:
+
+- The file explorer is slow and hard to use if you want to move more than one
+file back and forth.
+
+- Sometimes printing large objects makes the console stop responding and, given
+RStudio's intimate connection with its REPL, only by quitting the full
+application can you stop this kind of process.
+
+- [Diagnostics](https://github.com/rstudio/rstudio/issues/9692) have been
+cluttering local R sessions since 2021, which isn't necessarily a problem, but
+some novices might think that there is something wrong with their IDE.
+
+- You still can't use multi-core processing via forking with
+[furrr](https://furrr.futureverse.org/) and friends because, at the moment, it
+is considered unstable.
+
+- Again because of its connection to the console, if R encounters a fatal error,
+then the whole IDE crashes.
+
+```{r}
+#| echo: false
+
+knitr::include_graphics("images/rstudio_bomb_screenshot.webp")
+```
+
+Getting rid of all of these problems obviously comes at a price that most people
+aren't willing to pay. RStudio's ease of use is a big advantage for the majority
+of R programmers.
+
+### Tips
+
+As explained before, RStudio is the most plug and play of all four IDEs and, if
+you decide to use it, there is very little you can do to improve it. This
+doesn't mean, however, that you should use it with _all_ of its factory
+defaults. Most notably, RStudio comes out of the box with the REPL console below
+the file editor, which is not most peoples' preference. In order to change this,
+click the windowed button at the top of the interface and select
+**Console on Left**. You'll thank me later.
+
+```{r}
+#| echo: false
+
+knitr::include_graphics("images/rstudio_panes_screenshot.webp")
+```
+
+If you are a person with particular concerns about the reproducibility of your
+analyses, I suggest you also change another setting in RStudio: turn off
+automatic `.RData` saving.
+
+If you don't know what this hidden file is, it basically stores the data you use
+(also called your workspace) during a coding session. While this seems very
+convenient, it disincentivizes writing reproducible and resilient code. Don't
+believe me? Here is the description of `usethis::use_blank_slate()` a function
+(made by the very people at RStudio!) that disables `.RData`:
+
+> [...] However, long-term reproducibility is enhanced when you turn this
+> feature off and clear R's memory at every restart. Starting with a blank slate
+> provides timely feedback that encourages the development of scripts that are
+> complete and self-contained. [...]
+
+If you don't want to use `usethis::use_blank_slate()`, you can also change this
+setting manually in RStudio. In **Tools > Global Options…**, turn off
+**Restore .RData** and **Always save history**; additionally, set
+**Save workspace** to "never".
+
+```{r}
+#| echo: false
+
+knitr::include_graphics("images/rstudio_settings_screenshot.webp")
+```
+
+## VS Code
+
+## Emacs
+
+## Neovim
