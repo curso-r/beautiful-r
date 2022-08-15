@@ -24,7 +24,7 @@ print(1:9)
 ```
 
 ```{r}
-#| echo = FALSE
+#| echo: false
 options(width = 10)
 ```
 
@@ -34,7 +34,7 @@ print(1:9)
 ```
 
 ```{r}
-#| echo = FALSE
+#| echo: false
 options(width = 80)
 ```
 
@@ -153,7 +153,7 @@ correctly is to never put anything that you would write in a script there.
 Here is a good example of an `.Rprofile`:
 
 ```{r}
-#| eval = FALSE
+#| eval: false
 
 # Set repo
 options(repos = c(CRAN = "https://cran.rstudio.org"))
