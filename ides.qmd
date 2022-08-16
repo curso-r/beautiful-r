@@ -326,15 +326,15 @@ something wrong inside R.
 
 Overall, Emacs is light, widely supported, customizable, and solid. It is not,
 however, simple. For example, Emacs has a strong reliance on modifier keys,
-meaning that every shortcuts must be prepended by `Ctrl` and/or `Alt`; this
-phenomenon is so prevalent that people coined a specific term for RSI caused by
-using your pinky finger to access modifier keys too often:
-[Emacs pinky](https://en.wikipedia.org/wiki/Emacs#Emacs_pinky).
+meaning that every shortcuts must be prepended by `Escape`, `Meta`, `Alt`,
+`Control`, and/or `Shift`; this phenomenon is so prevalent that people coined a
+specific term for RSI caused by using your pinky finger to access modifier keys
+too often: [Emacs pinky](https://en.wikipedia.org/wiki/Emacs#Emacs_pinky).
 
 Below you'll find a short example (adapted from
 [here](https://ess.r-project.org/Manual/ess.html#Example-ESS-usage)) of how one
 can use ESS to analyze some data. Note that every `C-` and `M-` is short for
-`Ctrl+` and `Alt+`.
+`Ctrl+` and `Meta+`.
 
 ```txt
 ### Data Analysis Example
@@ -412,3 +412,73 @@ easier to access. They also come packed with presets that most users will want
 to configure anyway, cutting a lot of the setup out of the learning process.
 
 ## Neovim
+
+Neovim is the successor to
+[Vim](https://en.wikipedia.org/wiki/Vim_(text_editor)) (which is itself a
+successor to [vi](https://en.wikipedia.org/wiki/Vi)). Launched in 2015, it
+attempts to fix the problems found in its predecessors, reinvigorating vi's side
+in the [editor war](https://en.wikipedia.org/wiki/Editor_war).
+
+```{r}
+#| echo: false
+#| fig-cap: >
+#|   [Neovim running Nvim-R](https://github.com/jalvesaq/Nvim-R)
+
+knitr::include_graphics("images/nvim_screenshot.webp")
+```
+
+Again, like VS Code and Emacs, support for R in Neovim is dependent on plugins
+that extend its functionalities. This is for sure the most bare-bones of all
+editors discussed here, but you'll for sure look like a hacker while using it.
+
+### Pros and cons
+
+vi was launched in 1976, the same year as Emacs. It has gone through many
+versions and iterations, arriving in its current form only a few years ago, but
+this doesn't mean that it isn't robust or solid. Most of the changes from Vim to
+Neovim happened in the plugin and configuration systems; most shortcuts and
+functionalities remain the same since 1991.
+
+While not as extensible as Emacs, Neovim also has a vibrant add-in ecosystem.
+[Nvim-R](https://github.com/jalvesaq/Nvim-R) is the plugin that enables R
+support on the editor and it works basically in the same way as all other
+extensions discussed in this chapter: it adds a console, a documentation viewer,
+and a environment explorer to the standard file editor.
+
+As one can probably tell from the image above, Neovim runs on the terminal. It
+is the lightest and fastest of all four editors, working perfectly via SSH
+connections and on slower machines.
+
+Neovim's downsides mostly stem from its focus on minimalism. Unlike Emacs, which
+uses modifier keys to access shortcuts, Neovim uses something called modes. In
+its default mode, every key on the keyboard has a special meaning and can be
+combined with other keys to create complex and powerful commands. In order to
+actually edit the file, you must use the `i` key and enter "insert mode".
+
+Most of the time, users are constantly switching from mode to mode and taking
+advantage of its many, many keybindings. While this strategy is easier on the
+fingers than Emacs' modifiers, it has a significantly shallower learning curve.
+A common joke among novices is that it's easier to turn off your computer than
+quit Vim/Neovim[^3].
+
+How much speed and memory usage matters is up to the individual developer.
+Neovim might be hard to get into, but most users argue that the productivity
+gain from its keybindings is worth the hassle.
+
+[^3]: The shortcut to quit Vim/Neovim is `:wq`.
+
+### Tips
+
+Of all four applications, Neovim is probably the least common when talking about
+R development. There isn't much online that can help you with Nvim-R besides the
+[official documentation](https://github.com/jamespeapen/Nvim-R/wiki). Just make
+sure you have
+[installed](https://github.com/neovim/neovim/wiki/Installing-Neovim) Neovim
+correctly first!
+
+A really useful thing to do before jumping into Neovim is learning the
+keybindings with [Vim Adventures](https://vim-adventures.com/). There are also
+many [cheat sheets](https://vim.rtorr.com/) that can help in the process.
+Remember that almost all commands are the same in both Neovim and Vim, so you
+might find better online documentation when searching for "vim" instead of
+"neovim".
