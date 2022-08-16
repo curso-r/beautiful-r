@@ -40,8 +40,7 @@ bibliography: references.bib
 
 format:
   html:
-    theme: flatly
-    fig-cap-location: margin
+    theme: cosmo
 
 execute:
   freeze: auto

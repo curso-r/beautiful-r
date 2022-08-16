@@ -264,7 +264,6 @@ sure to swap `cmd` with `ctrl` wherever necessary):
 
 ```json
 [
-    // RStudio key bindings
     {
         "key": "cmd+shift+m",
         "command": "type",
@@ -286,10 +285,130 @@ sure to swap `cmd` with `ctrl` wherever necessary):
 
 ## Emacs
 
+Emacs (short for "Editor MACroS") is not a single text editor, but in fact a
+family of them. There are many Emacs _variants_, as they're called, but the one
+I'm going to talk about is [GNU Emacs](https://www.gnu.org/software/emacs/),
+which was released in 1985 and is to this day the most common implementation of
+Emacs.
+
 ```{r}
 #| echo: false
+#| fig-cap: >
+#|   [Emacs running ESS](https://github.com/ess-intro/presentation-ess-customization/blob/main/tutorial/images/window_config.png)
 
 knitr::include_graphics("images/emacs_screenshot.webp")
 ```
+
+This software is old, let's get that out of the way, but it doesn't mean that
+it's not good. Emacs is still being actively developed and has a devoted
+community of users that swear by its superiority over all other text editors.
+
+### Pros and cons
+
+In the section above, when talking about VS Code, I described it as extensible.
+Emacs is off the charts. People who don't like Emacs
+[say](https://en.wikipedia.org/wiki/Editor_war#Humor) that it is "a great
+operating system, lacking only a decent editor". You can add so much stuff to it
+that it becomes barely recognizable.
+
+This is both a pro and a con. You can configure your Emacs to your heart's
+content, but this also means that it can get pretty hard to get help online when
+something breaks. If you decide to try out Emacs, first you must decide how much
+you like to tinker with obscure settings and arcane Lisp.
+
+Like VS Code, Emacs needs an add-on in order to support R. This add-on, called
+[_Emacs Speaks Statistics_](https://ess.r-project.org/) (ESS), allows you to use
+Emacs much like you would RStudio: it has a file editor, a console, a
+documentation pane, and a environment explorer. The connection between the
+interface and the R process, however, is not as tightly coupled as RStudio's; in
+Emacs you don't have to worry about crashing the whole program if you do
+something wrong inside R.
+
+Overall, Emacs is light, widely supported, customizable, and solid. It is not,
+however, simple. For example, Emacs has a strong reliance on modifier keys,
+meaning that every shortcuts must be prepended by `Ctrl` and/or `Alt`; this
+phenomenon is so prevalent that people coined a specific term for RSI caused by
+using your pinky finger to access modifier keys too often:
+[Emacs pinky](https://en.wikipedia.org/wiki/Emacs#Emacs_pinky).
+
+Below you'll find a short example (adapted from
+[here](https://ess.r-project.org/Manual/ess.html#Example-ESS-usage)) of how one
+can use ESS to analyze some data. Note that every `C-` and `M-` is short for
+`Ctrl+` and `Alt+`.
+
+```txt
+### Data Analysis Example
+
+## Open the file you want
+C-x C-f myfile.R
+
+## Edit as appropriate, then start and switch to an *R*
+## process buffer
+C-c C-z
+
+## A new buffer *R* will appear. R will have been started
+## in this buffer. The buffer is in iESS [R] mode.
+
+## Return to the script
+C-z
+
+## Send current region (if active), or function, or
+## paragraph at point
+C-M-x
+
+## Send current region or function or paragraph and step
+C-c C-c
+
+## Send current line
+C-RET
+
+## Or load the entire buffer
+C-c C-l
+
+## Save the revised myfile.R
+C-x C-s.
+
+## Save the entire *R* interaction buffer
+C-x C-s.
+
+## Search for documentation
+C-c C-d
+
+## Investigate available ESS commands
+C-c C-h
+```
+
+Yet, people still love Emacs. The fact that you can still pick up a tutorial
+from the 90's and have it still work is just plain awesome. Emacs' mix of
+reliability and extensibility makes for an intoxicating brew.
+
+### Tips
+
+The first thing you'll want to do in order to learn how to use Emacs and ESS is
+read [ESS Intro's](https://github.com/ess-intro) tutorials. They have a
+collection of [presentations](https://ess-intro.github.io/) and
+[YouTube videos](https://www.youtube.com/channel/UCph8LPTQ8gkNnKf1WHF2Tgg) that
+help you get started with R in Emacs. They even have an
+[introduction](https://www.youtube.com/watch?v=1YOrd7NCGkg) to Emacs itself
+which might come in handy for the uninitiated.
+
+Another aspect of Emacs that might interest you is the distributions that try to
+get rid of the flood of modifier keys that most users have to deal with.
+[Doom Emacs](https://github.com/doomemacs/doomemacs) and
+[Spacemacs](https://github.com/syl20bnr/spacemacs) are two noteworthy
+initiatives.
+
+```{r}
+#| echo: false
+#| fig-cap: >
+#|   [Doom Emacs](https://github.com/doomemacs/doomemacs/tree/screenshots#emacsd-screenshots)
+
+knitr::include_graphics("images/doom_screenshot.webp")
+```
+
+These more modern "alternatives" use Vim keybindings (which will be discussed
+below) and substitute modifier keys with combinations of other keys that are
+easier to access. They also come packed with presets that most users will want
+to configure anyway, cutting a lot of the setup out of the learning process.
 
 ## Neovim
