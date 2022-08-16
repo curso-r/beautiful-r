@@ -243,7 +243,7 @@ to remove the settings you have already added during radian's setup:
 
     // Radian setup! Keep yours as is!
     "r.rterm.mac": "/opt/homebrew/bin/radian",
-    "r.bracketedPaste": true,
+    "r.bracketedPaste": true
 }
 ```
 
@@ -269,7 +269,7 @@ sure to swap `cmd` with `ctrl` wherever necessary):
     {
         "key": "shift+cmd+l",
         "command": "r.loadAll"
-    },
+    }
 ]
 ```
 
