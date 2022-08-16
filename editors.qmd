@@ -144,7 +144,7 @@ setting manually in RStudio. In **Tools > Global Options…**, turn off
 knitr::include_graphics("images/rstudio_settings_screenshot.webp")
 ```
 
-:::{.callout-note}
+:::{.callout-important}
 ## Important
 
 If you're a beginner in the world of R, you're welcome to stop this chapter here
