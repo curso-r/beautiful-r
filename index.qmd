@@ -15,8 +15,8 @@ potential. Think of it as the antithesis to
 The book is divided into three sections in increasing order of complexity:
 
 1. **Structure** explains how to create and use R projects effectively. Learn
-how to setup your environment, use IDEs responsibly, and never lose a file
-again.
+how to setup your environment, use code editors responsibly, and never lose a
+file again.
 
 1. **Patterns** is full of tips on programming R well. Transform your projects
 into packages, avoid silly mistakes by creating unit tests, and learn how to

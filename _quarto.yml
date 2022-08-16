@@ -13,7 +13,7 @@ book:
     - part: structure.qmd
       chapters:
         - environment.qmd
-        - ides.qmd
+        - editors.qmd
         - projects.qmd
         - git.qmd
 

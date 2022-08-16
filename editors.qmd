@@ -1,26 +1,16 @@
-# IDEs {#sec-ides}
+# Editors {#sec-editors}
 
 As discussed in [Chapter -@sec-environment], coding doesn't happen in a vacuum.
-One important part of a programmer's workflow is their integrated development
-environment, also known as IDE. In short, an IDE provides tools that aid in
-software development, like debuggers, compilers, interpreters, syntax
-highlighters, and much more.
+One important part of a programmer's workflow is their code editor. In short, an
+editor allows you to write computer programs, but they can also include things
+like debuggers, compilers, interpreters, syntax highlighters, and much more.
 
-The choice of IDE is up to the developer. Some enjoy having more tools at their
-disposal, while other prefer simplicity and portability. When talking about R,
-there are four popular choices:
+The choice of editor is up to the developer. Some enjoy having more tools at
+their disposal, while other prefer simplicity and portability. When talking
+about R, there are four popular choices:
 [RStudio](https://www.rstudio.com/products/rstudio/),
 [VS Code](https://code.visualstudio.com),
 [Emacs](https://www.gnu.org/software/emacs/), and [Neovim](https://neovim.io/).
-
-::: callout-note
-## Note
-
-Strictly speaking, Emacs and Neovim are not fully fledged IDEs, instead being
-classified as [text editors](https://en.wikipedia.org/wiki/Text_editor) (a
-difference that will be explained later in the chapter). For the sake of
-simplicity, I'll be lumping these two together with RStudio and VS Code.
-:::
 
 In the coming sections I'll talk about each of them, their advantages and
 disadvantages, as well as a few tips on how to make the most out of their
@@ -28,7 +18,7 @@ features.
 
 ## RStudio
 
-RStudio is, by far, the most popular IDE for R. It was first released in 2011
+RStudio is, by far, the most popular editor for R. It was first released in 2011
 and is maintained by [RStudio, PBC](https://www.rstudio.com/) (now
 [Posit, PBC](https://posit.co/)), a company whose contribution to the R
 community is hard to overestimate.
@@ -42,12 +32,12 @@ community is hard to overestimate.
 knitr::include_graphics("images/rstudio_screenshot.webp")
 ```
 
-Unlike the other software applications featured here, RStudio was made for R.
-For the majority of its life, it only supported direct code execution and
-extensions associated with the language, e.g., RMarkdown and Shiny. This only
-changed in the past few years with additional support for Python and Jupyter
-notebooks through the [reticulate](https://rstudio.github.io/reticulate/)
-package.
+Unlike the other software applications featured here, RStudio was made for R and
+can be considered a full _Integrated Development Environment_ (IDE). For the
+majority of its life, it only supported direct code execution and extensions
+associated with the language, e.g., RMarkdown and Shiny. This only changed in
+the past few years with additional support for Python and Jupyter notebooks
+through the [reticulate](https://rstudio.github.io/reticulate/) package.
 
 ### Pros and cons
 
@@ -60,7 +50,7 @@ features that you basically can't get anywhere else: RMarkdown integration,
 memory monitoring, database connections, etc.
 
 RStudio is also deeply connected to its company's other products. One of this
-IDEs best features is its web version called RStudio Server; there is a free and
+IDE's best features is its web version called RStudio Server; there is a free and
 a paid version, but both allow you to basically access a remote server through
 RStudio's interface. This means that you can use the processing power of a
 different machine and access it via the web on your local computer.
@@ -114,8 +104,8 @@ of R programmers.
 
 ### Tips
 
-As explained before, RStudio is the most plug and play of all four IDEs and, if
-you decide to use it, there is very little you can do to improve it. This
+As explained before, RStudio is the most plug and play of all four editors and,
+if you decide to use it, there is very little you can do to improve it. This
 doesn't mean, however, that you should use it with _all_ of its factory
 defaults. Most notably, RStudio comes out of the box with the REPL console below
 the file editor, which is not most peoples' preference. In order to change this,
@@ -182,8 +172,8 @@ project.
 ### Pros and cons
 
 In my opinion, the biggest argument in favor of using VS Code is its
-flexibility. You can "pop the hood" of the IDE and edit every minute setting of
-its interface, creating new shortcuts and snippets, editing the configuration
+flexibility. You can "pop the hood" of the editor and edit every minute setting
+of its interface, creating new shortcuts and snippets, editing the configuration
 files directly, and even create extensions that enhance your development
 workflow.
 
@@ -212,14 +202,14 @@ the most out of VS Code, you really must follow the extra steps described at the
 end of the **Getting Started** section; this will, however, involve installing
 a new R console through Python and editing your `.Rprofile`.
 
-Unlike RStudio, VS Code's R console is not integrated to the rest of the IDE.
+Unlike RStudio, VS Code's R console is not integrated to the rest of the editor.
 This solves the issues with multi-core processing and full crases, but it
 creates other problems; for one, you have to start the R console every time you
 open VS Code, which can get boring pretty fast. The plot viewer is also a little
 clunky, so you have to be smart with your window management if you don't want
 gigantic plots taking up half of your screen.
 
-To sum up, VS Code is a modern and customizable IDE that can work with any
+To sum up, VS Code is a modern and customizable editor that can work with any
 language you can imagine. This wholistic approach means that you get really cool
 features, but also that you loose some tighter integrations which RStudio alone
 can offer.
