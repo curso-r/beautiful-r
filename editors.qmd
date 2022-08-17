@@ -44,7 +44,7 @@ through the [reticulate](https://rstudio.github.io/reticulate/) package.
 Given its dedication to the R environment, RStudio is probably the easiest to
 use. There is no setup and no extensions to install; it simply works.
 
-It's integrated R console allows you to, out of the box, execute code directly.
+Its integrated R console allows you to, out of the box, execute code directly.
 The fact that the interface is so tightly coupled with R means that you get
 features that you basically can't get anywhere else: RMarkdown integration,
 memory monitoring, database connections, etc.
@@ -220,7 +220,7 @@ gigantic plots taking up half of your screen.
 
 To sum up, VS Code is a modern and customizable editor that can work with any
 language you can imagine. This wholistic approach means that you get really cool
-features, but also that you loose some tighter integrations which RStudio alone
+features, but also that you lose some tighter integrations which RStudio alone
 can offer.
 
 ### Tips
