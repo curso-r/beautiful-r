@@ -236,7 +236,7 @@ You might also want to configure some settings and shortcuts; this is not
 trivial, but it will help with some minor hiccups for R users. First, open your
 **Command Palette** with `Ctrl+Shift+P` (`Cmd+Shift+P` on Mac) and select the
 **Preferences: Open User Settings (JSON)** command. Your `settings.json` should
-open and I suggest you replaces its contents with the following, making sure not
+open and I suggest you replace its contents with the following, making sure not
 to remove the settings you have already added during radian's setup:
 
 ```json
@@ -319,14 +319,14 @@ you like to tinker with obscure settings and arcane Lisp.
 Like VS Code, Emacs needs an add-on in order to support R. This add-on, called
 [_Emacs Speaks Statistics_](https://ess.r-project.org/) (ESS), allows you to use
 Emacs much like you would RStudio: it has a file editor, a console, a
-documentation pane, and a environment explorer. The connection between the
+documentation pane, and an environment explorer. The connection between the
 interface and the R process, however, is not as tightly coupled as RStudio's; in
 Emacs you don't have to worry about crashing the whole program if you do
 something wrong inside R.
 
 Overall, Emacs is light, widely supported, customizable, and solid. It is not,
 however, simple. For example, Emacs has a strong reliance on modifier keys,
-meaning that every shortcuts must be prepended by `Escape`, `Meta`, `Alt`,
+meaning that every shortcut must be prepended by `Escape`, `Meta`, `Alt`,
 `Control`, and/or `Shift`; this phenomenon is so prevalent that people coined a
 specific term for RSI caused by using your pinky finger to access modifier keys
 too often: [Emacs pinky](https://en.wikipedia.org/wiki/Emacs#Emacs_pinky).
