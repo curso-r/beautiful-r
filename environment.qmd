@@ -46,7 +46,7 @@ environment.
 
 ## File system
 
-In [Chapter -@sec-projects], we'll discuss how to organize an R project, but
+In [Chapter -@sec-r-projects], we'll discuss how to organize an R project, but
 first we need some guidelines on how to organize files in general. Many people
 underestimate the usefulness organizing and naming their files consistently, but
 the truth is that having a system saves you valuable time when searching through

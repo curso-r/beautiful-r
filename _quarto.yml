@@ -14,7 +14,7 @@ book:
       chapters:
         - environment.qmd
         - editors.qmd
-        - projects.qmd
+        - r-projects.qmd
         - git.qmd
 
     - part: patterns.qmd

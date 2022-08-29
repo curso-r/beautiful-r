@@ -1,0 +1,300 @@
+# R Projects {#sec-r-projects}
+
+If you followed my advice up until now, you should have created a folder in your
+computer for all coding projects, your `.Rprofile` should be as clean as
+possible (or ever better: untouched), and your R installation should be
+up-to-date. Last but not least, you should also have chosen a code editor that
+suits your needs.
+
+Now it's time to start coding! Or rather, it's time to start to _think about_
+coding. In this chapter I'll talk about file paths (again) and how to set up
+your first R project.
+
+:::{.callout-note}
+## Note
+
+Unfortunately, the nomenclature here isn't the best. When I talk about a
+"project", I'm referring to a school or work project, something that requires
+its own folder on your computer. Conversely, when I talk about an "R project",
+I'm referring to the R's ability to set your working directory automatically.
+:::
+
+## Paths: absolute and relative
+
+Most of us live our whole lives without ever having to worry about absolute and
+relative paths. Unfortunately these are important concepts in programming and
+you should at least get acquainted with them at some point. I'll do my best to
+explain them here, but you can always read this
+[Wikipedia article](https://en.wikipedia.org/wiki/Path_(computing)) on this
+subject for a more in-depth explanation.
+
+Let's start with an example: you and I are coworkers and I need you to find a
+document that I forgot on my desk. Here are my initial instructions:
+
+1. Go to the lobby of our office building.
+
+1. Take the elevator to the `Users` floor.
+
+1. Find the desk with my name on it.
+
+1. Open the second drawer, where I keep all of my documents.
+
+1. Look for the folder labeled `beautiful-r`.
+
+1. Grab the document titled `projects.qmd`.
+
+This is a pretty decent set of instructions, but they are a bit too detailed; if
+I needed another document, I wouldn't want you to go back to the lobby again and
+start from scratch. Besides, if we moved offices, I'd have to completely change
+these instructions! Ditto if I left the folder on someone else's desk.
+
+But, since you're my coworker, what if I assumed you already knew where my
+`beautiful-r` folder was? We were at the office the whole week and you saw me
+working on `beautiful-r`, I don't need to explain to you where I left it. In
+this case, I could give you much shorter instructions:
+
+1. Find my folder labeled `beautiful-r`.
+
+1. Grab the document titled `projects.qmd`.
+
+Way simpler, right? As you have probably guessed by now, the first type of
+instruction represents _absolute paths_ and the second represents
+_relative paths_. An absolute path starts at what is called the _root directory_
+(i.e. the lobby) and a relative path starts at the _working directory_ (i.e. the
+folder I was working on).
+
+## Paths in action
+
+In order to construct an absolute path, you must start from the root directory
+of your computer. On Linux/MacOS it is simply `/`, while on Windows it is a
+drive (usually `C:/`). This is what the absolute instructions from last section
+would look like as a path on my MacOS computer:
+
+```{r}
+# Absolute path to projects.qmd
+fs::path_abs("projects.qmd")
+```
+
+On the other hand, in order to determine the relative path to a file, first you
+must set your working directory. I'll explain how to do this in the next
+section; for now, this is what my current working directory looks like:
+
+```{r}
+# My current working directory
+fs::path_wd()
+```
+
+A relative path is simply an absolute path minus your current working directory
+and any spare slashes. This is what the relative instructions from last section
+look like as a path:
+
+```{r}
+# Relative path to projects.qmd
+fs::path_rel("projects.qmd")
+```
+
+Armed with this knowledge, take a look this small slice of the `beautiful-r`
+folder on my computer (my current working directory). What is the relative path
+to `renv.qmd`? What about `rstudio_screenshot.webp`?
+
+```
+.
+├── images
+│   ├── rstudio_screenshot.webp
+│   └── vscode_screenshot.webp
+├── projects.qmd
+└── renv.qmd
+```
+
+In both cases, we can ignore anything that is outside of my working directory.
+The first requested path is simply `references.qmd`, and the second is
+`images/rstudio_screenshot.webp`
+
+As you can see, relative paths don't depend on your computer's structure, just
+the structure of the directory you're working on. If I reference an absolute
+path in my code and then ask you to run it, it'll never work as you probably
+don't have a `/Users/clente/` folder on your machine. This is why we must
+_always_ use relative paths in our code.
+
+## Setting up an R project
+
+Since relative paths depend on your working directory, we need a way to set it
+automatically every time we change the project we're working on. We're going to
+do this using R projects.
+
+:::{.callout-important}
+## Important
+
+You might have heard of a different way to set your working directory called
+`setwd()`. If you use this function regularly, I urge you to _stop_. There are
+too many ways of breaking `setwd()`, so using R projects is the way to go.
+:::
+
+An R project is just a regular folder with an Rproj sentinel file. Thus, every
+time you open an R project, its sentinel will set your working directory to be
+the folder you just opened.
+
+There are two ways to create R projects: through RStudio's built-in menu or with
+the [usethis package](https://usethis.r-lib.org/). I like the latter method
+better, but the choice is up to you.
+
+### RStudio
+
+For the first method, go to **File > New Project** and select **New Directory**:
+
+```{r}
+#| echo: false
+
+knitr::include_graphics("images/rstudio_screenshot_new_project_1.webp")
+```
+
+Then select **New Project**:
+
+```{r}
+#| echo: false
+
+knitr::include_graphics("images/rstudio_screenshot_new_project_2.webp")
+```
+
+Finally, choose your project's name and select where it's going to live:
+
+```{r}
+#| echo: false
+
+knitr::include_graphics("images/rstudio_screenshot_new_project_3.webp")
+```
+
+Once you're done with this process, RStudio will automatically open your new
+R project. If you want to switch R projects, simply go to
+**File > Open Project...**
+
+### Other editors
+
+If don't use RStudio or want a reproducible R project setup, then you'll need
+`usethis::create_project()`. This function takes the absolute path to a
+(non-existing) folder and creates it as an R project.
+
+```{r}
+#| eval: false
+
+# Create a project with usethis
+usethis::create_project("/Users/clente/Documents/sample")
+```
+
+```{r}
+#| echo: false
+
+# Create a project with usethis
+usethis::create_project("~/Documents/sample", rstudio = TRUE)
+```
+
+Absolute paths are necessary here because you shouldn't depend on your current
+working directory to create another R project's sentinel file. This can lead to
+nested projects, a practice that's strongly discouraged.
+
+## Using R projects
+
+With your new R project active, let's take a look at what's inside:
+
+```{r}
+#| eval: false
+
+# Directory structure of 'sample'
+fs::dir_tree()
+```
+
+```{r}
+#| echo: false
+
+usethis::with_project("~/Documents/sample", {
+  fs::dir_tree()
+}, quiet = TRUE)
+```
+
+Out of the box, R projects are really bare-bones: they only contain a sentinel
+file and a folder for R scripts. You'll probably need at least one more folder
+to store your data.
+
+```{r}
+#| eval: false
+
+# Create 'data-raw' and show directory structure
+usethis::use_data_raw("clean")
+fs::dir_tree()
+```
+
+```{r}
+#| echo: false
+
+usethis::with_project("~/Documents/sample", {
+  usethis::use_data_raw("clean")
+  fs::dir_tree()
+}, quiet = TRUE)
+```
+
+`data-raw` is a classic directory that will contain all data files (CSV, Excel,
+etc.) and scripts to clean these data. `usethis::use_data_raw()` automatically
+creates this directory and a sample cleaning script.
+
+Suppose I have a `mtcars.csv` file that needs a scrub. The first step is saving
+it to `data-raw` and writing the cleaning script in `clean.R`. Here is what that
+file looks like for me:
+
+```{r}
+#| eval: false
+
+# Read data
+df <- readr::read_csv("data-raw/mtcars.csv")
+
+# Clean data
+df_clean <- dplyr::filter(df, wt < 5)
+
+# Save cleaned data
+readr::write_csv(df, "data-raw/mtcars_clean.csv")
+```
+
+```{r}
+#| echo: false
+
+usethis::with_project("~/Documents/sample", {
+  readr::write_csv(mtcars, "data-raw/mtcars.csv")
+
+  df <- readr::read_csv("data-raw/mtcars.csv", show_col_types = FALSE)
+  df_clean <- dplyr::filter(df, wt < 5)
+  readr::write_csv(df, "data-raw/mtcars_clean.csv")
+}, quiet = TRUE)
+```
+
+Note how I'm only using relative paths; this way, if I ever share my R project
+with someone else, they won't have to deal with broken paths. After running the
+script, this is what my R project looks like:
+
+```{r}
+#| eval: false
+
+# Directory structure after running 'clean.R'
+fs::dir_tree()
+```
+
+```{r}
+#| echo: false
+
+usethis::with_project("~/Documents/sample", {
+  fs::dir_tree()
+}, quiet = TRUE)
+```
+
+Once the cleaning process is done, more complex analyses should be kept in the
+`R` folder. In any case, scripts will read `data-raw/mtcars_clean.csv` through
+its relative path.
+
+And we're off to the races! Once you start a new class or get assigned to a new
+project at work, simply create a new R project and use it to keep all pertinent
+scripts and data. Always use relative paths, store your cleaning scripts on
+`data-raw`, and don't worry about portability ever again.
+
+```{r}
+#| echo: false
+
+fs::dir_delete("~/Documents/sample")
+```
