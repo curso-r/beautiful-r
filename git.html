@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.163">
+<meta name="generator" content="quarto-1.2.313">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -20,6 +20,69 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -218,7 +281,16 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#install-first-learn-later" id="toc-install-first-learn-later" class="nav-link active" data-scroll-target="#install-first-learn-later"><span class="toc-section-number">4.1</span>  Install first, learn later</a></li>
+  <li><a href="#personal-access-token" id="toc-personal-access-token" class="nav-link" data-scroll-target="#personal-access-token"><span class="toc-section-number">4.2</span>  Personal Access Token</a></li>
+  <li><a href="#your-first-repository" id="toc-your-first-repository" class="nav-link" data-scroll-target="#your-first-repository"><span class="toc-section-number">4.3</span>  Your first repository</a></li>
+  <li><a href="#using-git-and-github" id="toc-using-git-and-github" class="nav-link" data-scroll-target="#using-git-and-github"><span class="toc-section-number">4.4</span>  Using Git and GitHub</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -233,15 +305,141 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
+  
     
   </div>
   
 
 </header>
 
-<p>Empty.</p>
+<p>Git is an open source software for version control that has become one of the most useful gadgets in the modern programmer’s toolbox. It’s also a nightmare for beginners.</p>
+<p>Linus Torvalds, creator of Linux, started development on Git in early 2005 after giving up on the source-control management system he previously used. Git’s official <a href="https://github.com/git/git/blob/master/README.md">README</a> highlights its duality:</p>
+<blockquote class="blockquote">
+<p>[…] He described the tool as “the stupid content tracker” and the name as (depending on your mood): […]</p>
+<ul>
+<li>“global information tracker”: you’re in a good mood, and it actually works for you. Angels sing, and a light suddenly fills the room.</li>
+<li>“goddamn idiotic truckload of sh*t”: when it breaks</li>
+</ul>
+</blockquote>
+<p>But don’t be scared if you have no clue about how to use Git! The good news is that there are plenty of tutorials online that teach you the basics and, most likely, you won’t even have to learn the advanced stuff for quite some time.</p>
+<p>There is a whole book with almost 50 (!) chapters devoted to using Git with R: <a href="https://happygitwithr.com/"><em>Happy Git and GitHub for the useR</em></a> (sometimes abbreviated simply as <em>Happy Git</em>) by Jennifer Bryan. This chapter is but the tip of the Git iceberg, so keep in mind that I’m glossing over a lot of detail in here.</p>
+<section id="install-first-learn-later" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="install-first-learn-later"><span class="header-section-number">4.1</span> Install first, learn later</h2>
+<p>I suggest you install Git before learning what to do with it. This guarantees that you’ll be able to try everything in this chapter out, so don’t procrastinate. <em>Happy Git</em> has a full <a href="https://happygitwithr.com/install-git.html">chapter</a> about the installation process and corner cases you might run into, but the main points are:</p>
+<ul>
+<li>On Windows and Mac you can grab an installer from the official <a href="https://git-scm.com/download/">website</a>.</li>
+<li>On Linux you can install it from your distro’s package manager. Ubuntu users, for example, can run <code>sudo apt install git</code> on the terminal.</li>
+</ul>
+<p>To check whether you’ve installed Git correctly, verify that you have the Git Bash program (on Windows) or run the following command on your terminal (on Linux/Mac):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>git version 2.39.0</code></pre>
+</div>
+</div>
+<p>With Git properly installed on your computer, register for a <a href="https://github.com/">GitHub</a> account. It will all make sense later, but this is a cloud platform that stores your Git repositories; it’s a like a Google Drive for code. The registration is fast and using GitHub is free (most of the time), so you don’t have to worry about this step.</p>
+<p>Now you can introduce yourself to Git. This is how we connect our local Git installation with our remote GitHub account. Jump back into R, load the usethis package, and tell Git who you are. In the command below, change <code>NAME</code> to your name and <code>EMAIL</code> to the email address you used when creating your GitHub account:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(usethis)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">use_git_config</span>(<span class="at">user.name =</span> <span class="st">"NAME"</span>, <span class="at">user.email =</span> <span class="st">"EMAIL"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git_default_branch_configure</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="personal-access-token" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="personal-access-token"><span class="header-section-number">4.2</span> Personal Access Token</h2>
+<p>For your local Git installation to be able to communicate with GitHub, you’ll need to provide it with your “password”. I’m using quotes here because handing out your actual password to a program in your computer would be very insecure. Instead, we’ll use something called a <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token">Personal Access Token</a> (PAT).</p>
+<p>A PAT is a long string of characters and numbers that GitHub generates for you and that can be used for authentication instead of your password. There are three main advantages to this approach:</p>
+<ol type="1">
+<li><p>PATs have very limited permissions by default, meaning that, if they end up being leaked, no one can take control of your account. Still, you should <em>never share your PAT</em> with anyone!</p></li>
+<li><p>If someone does get their hands on one of your PATs, you can remotely deactivate them. This is much simpler than changing your password or hunting down the culprit.</p></li>
+<li><p>You can also set an expiration date for each and every PAT you generate, which is the best way to prevent your credentials from leaking by way of old software and hardware you forgot to decommission.</p></li>
+</ol>
+<p>To generate your first PAT, use <code>usethis::create_github_token()</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">create_github_token</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This command will open a template on GitHub that you can use to generate a PAT. If you don’t want to learn about the minutiae of <a href="https://docs.github.com/en/developers/apps/building-oauth-apps/scopes-for-oauth-apps">access scopes</a>, you can simply change the name of the PAT to something more descriptive (e.g. “Work PC PAT”) and click <strong>Create token</strong>.</p>
+<p>GitHub will then generate a PAT and allow you to copy it. Make sure to <em>copy it now</em>! For security reasons, you’ll not be able to see your PAT ever again.</p>
+<p>Next, you should store your PAT in a place that Git can access. Simply install the gitcreds package and run <code>gitcreds::gitcreds_set()</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gitcreds)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">gitcreds_set</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<pre><code>? Enter password or token: YOUR_PAT_GOES_HERE
+-&gt; Adding new credentials...
+-&gt; Removing credentials from cache...
+-&gt; Done.</code></pre>
+<p>If you accepted usethis’ template, then you’ll need to re-generate this PAT once a month. GitHub will make sure to warn you when a token is close to expiring and even provide you with a nice shortcut to do so, meaning you don’t have to worry about choosing the same access scopes every time. Once you have your new PAT, run <code>gitcreds::gitcreds_set()</code> again and choose <strong>Replace these credentials</strong> when prompted:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gitcreds_set</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<pre><code>-&gt; Your current credentials for 'https://github.com':
+
+  protocol: https
+  host    : github.com
+  username: PersonalAccessToken
+  password: &lt;-- hidden --&gt;
+
+-&gt; What would you like to do?
+
+1: Keep these credentials
+2: Replace these credentials
+3: See the password / token
+
+Selection: 2
+
+-&gt; Removing current credentials...
+
+? Enter new password or token: YOUR_NEW_PAT_GOES_HERE
+-&gt; Adding new credentials...
+-&gt; Removing credentials from cache...
+-&gt; Done.</code></pre>
+<p>To make sure your setup is in tip-top shape, you can use either <code>usethis::git_sitrep()</code> or <code>gh::gh_whoami()</code> (just make sure to install the gh package first):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>gh<span class="sc">::</span><span class="fu">gh_whoami</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<pre><code>{
+  "name": "NAME",
+  "login": "USERNAME",
+  "html_url": "https://github.com/USERNAME",
+  "scopes": "gist, repo, workflow",
+  "token": "PAT"
+}</code></pre>
+</section>
+<section id="your-first-repository" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="your-first-repository"><span class="header-section-number">4.3</span> Your first repository</h2>
+<p>A repository (often simply called “repo”) is a folder that uses Git for version control. Now that you have installed Git, created a GitHub account, and introduced yourself, you should be ready to create your first R project that is also a repo.</p>
+<p>First, go to <a href="https://github.com/new">https://github.com/new</a> and chose a name for your temporary repo. Mine is going to be called <code>test</code>. Then add a simple description and check the <strong>Add a README file</strong> box.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/github_new_repo.webp" class="img-fluid"></p>
+</div>
+</div>
+<p>Once you’re happy with your repo, click <strong>Create repository</strong> at the bottom of the page. If you did everything right, you should see a screen like in the image below.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/github_empty_repo.webp" class="img-fluid"></p>
+</div>
+</div>
+<p>Now let’s go back to RStudio. Just like we did in <a href="r-projects.html">Chapter&nbsp;<span>3</span></a>, go to <strong>File &gt; New Project</strong>, but this time you should select <strong>Version Control &gt; Git</strong>. Fill the prompt with your GitHub repo’s URL and select a place to create the R project:</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/rstudio_new_repo.webp" class="img-fluid"></p>
+</div>
+</div>
+<p>Finally, click <strong>Create Project</strong> to finish the process. If this process didn’t work for you, make sure to check out <em>Happy Git</em>’s chapter on <a href="https://happygitwithr.com/troubleshooting.html">troubleshooting</a>. If it has, your RStudio should now have a new <strong>Git</strong> pane:</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="images/rstudio_git_pane.webp" class="img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="using-git-and-github" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="using-git-and-github"><span class="header-section-number">4.4</span> Using Git and GitHub</h2>
+<p>Now you should be more than ready to learn how to actually use Git and GitHub.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -285,7 +483,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -321,24 +536,42 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script>

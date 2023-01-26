@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Beautiful R",
     "section": "",
-    "text": "If you came here of your own volition, you’re probably an R programmer. Maybe you’re still a novice, maybe you’ve already had your fair share of cannot coerce type 'closure' errors; either way, you’re trying to grapple with this (at the time of writing) almost thirty years-old programming language.\nIt’s tough, I know. Take a deep breath. I’ve got you covered.\nBeautiful R is a book about what R does right: its goal is to both help you succeed at programming R, and showcase this quirky little language’s full potential. Think of it as the antithesis to The R Inferno.\nThe book is divided into three sections in increasing order of complexity:\n\nStructure explains how to create and use R projects effectively. Learn how to setup your environment, use code editors responsibly, and never lose a file again.\nPatterns is full of tips on programming R well. Transform your projects into packages, avoid silly mistakes by creating unit tests, and learn how to write good R code.\nStyle covers the last step in the ladder: making your code clean, easy to understand, and beautiful. Once you are able to consistently write good code, it’s time to start writing great code."
+    "text": "Preface\nIf you came here of your own volition, you’re probably an R programmer. Maybe you’re still a novice, maybe you’ve already had your fair share of cannot coerce type 'closure' errors; either way, you’re trying to grapple with this (at the time of writing) almost thirty years-old programming language.\nIt’s tough, I know. Take a deep breath. I’ve got you covered.\nBeautiful R is a book about what R does right: its goal is to both help you succeed at programming R, and showcase this quirky little language’s full potential. Think of it as the antithesis to The R Inferno.\nThe book is divided into three sections in increasing order of complexity:\n\nStructure explains how to create and use R projects effectively. Learn how to setup your environment, use code editors responsibly, and never lose a file again.\nPatterns is full of tips on programming R well. Transform your projects into packages, avoid silly mistakes by creating unit tests, and learn how to write good R code.\nStyle covers the last step in the ladder: making your code clean, easy to understand, and beautiful. Once you are able to consistently write good code, it’s time to start writing great code."
   },
   {
     "objectID": "introduction.html",
@@ -18,14 +18,7 @@
     "href": "structure.html",
     "title": "Structure",
     "section": "",
-    "text": "Empty."
-  },
-  {
-    "objectID": "environment.html",
-    "href": "environment.html",
-    "title": "1  Environment",
-    "section": "",
-    "text": "Programming necessarily presupposes a programming environment. Just as one can’t write text without choosing a font, one can’t write code outside of an environment.\nThe environment of an R script is like air is to us: you might forget that it exists, but it is always there. Then why write a whole chapter about this? Why write about air?\nBreathing foul air can make you dizzy, and working in a broken environment might cause your script to function incorrectly; this is why we need to learn how to properly manage it. There is no trick in the code above, by the way. I haven’t redefined the print() function, I just changed the width option in R’s environment."
+    "text": "List packages to install."
   },
   {
     "objectID": "environment.html#file-system",
@@ -47,13 +40,6 @@
     "title": "1  Environment",
     "section": "1.3 Versions",
     "text": "1.3 Versions\nTo me, this is the most important part of the chapter. You can fix all of your file names and remove everything from your .Rprofile; if you don’t update your system, it’s all for naught.\nR is a relatively old language, so it has been updated many times since its launch. Every two to three months, the R Core Team releases a new version with many improvements and bug fixes. These updates can be very minor, but sometimes there are truly exciting new features. in R 4.1.0, for example, the native pipe (|>) was introduced, pretty much retiring magrittr.\nThis means that, if you don’t upgrade your R installation, you’ll be missing out on the evolution of the language and leaving your system vulnerable to known bugs.\nThe same is true for packages, the life and blood of R. Packages change much more and much faster than R itself, since they’re not always worried about backwards compatibility. If you leave your packages to rot, expect your scripts to stop working on other peoples’ machines, to have harder time googling bugs, and to get stuck with old code.\nMy advice is then the following:\n\nEvery few weeks make sure to run update.packages() to update your packages.\nEvery few months you should also update the language. If you’re on Windows you can use the installr package, otherwise you can go to their website and grab the newest binary.\n\nIt’s evidently a bit harder to keep your environment up to date than to just keep it unchanged forever. Sometimes you’ll have to rewrite something that stopped working from one version to the next, but this is much easier than letting your system grow more and more out of date until, all of the sudden, everything stops working all at once. If you keep up with every release, the adjustments will be small and frequent; if you don’t, the adjustments will be major and you might not be able to make them in a reasonable amount of time.\nAs a last suggestion, also make sure to update your operating system. R doesn’t support every version of Windows and Mac forever, and I’m not even mentioning the security patches you’re missing when you choose to “update later”."
-  },
-  {
-    "objectID": "editors.html",
-    "href": "editors.html",
-    "title": "2  Editors",
-    "section": "",
-    "text": "As discussed in Chapter 1, coding doesn’t happen in a vacuum. One important part of a programmer’s workflow is their code editor. In short, an editor allows you to write computer programs, but they can also include things like debuggers, compilers, interpreters, syntax highlighters, and much more.\nThe choice of editor is up to the developer. Some enjoy having more tools at their disposal, while other prefer simplicity and portability. When talking about R, there are four popular choices: RStudio, VS Code, Emacs, and Neovim.\nIn the coming sections I’ll talk about each of them, their advantages and disadvantages, as well as a few tips on how to make the most out of their features."
   },
   {
     "objectID": "editors.html#rstudio",
@@ -84,13 +70,6 @@
     "text": "2.4 Neovim\nNeovim is the successor to Vim (which is itself a successor to vi). Launched in 2015, it attempts to fix the problems found in its predecessors, reinvigorating vi’s side in the editor war.\n\n\n\n\n\nNeovim running Nvim-R\n\n\n\n\nAgain, like VS Code and Emacs, support for R in Neovim is dependent on plugins that extend its functionalities. This is for sure the most bare-bones of all editors discussed here, but you’ll for sure look like a hacker while using it.\n\n2.4.1 Pros and cons\nvi was launched in 1976, the same year as Emacs. It has gone through many versions and iterations, arriving in its current form only a few years ago, but this doesn’t mean that it isn’t robust or solid. Most of the changes from Vim to Neovim happened in the plugin and configuration systems; most shortcuts and functionalities remain the same since 1991.\nWhile not as extensible as Emacs, Neovim also has a vibrant add-in ecosystem. Nvim-R is the plugin that enables R support on the editor and it works basically in the same way as all other extensions discussed in this chapter: it adds a console, a documentation viewer, and a environment explorer to the standard file editor.\nAs one can probably tell from the image above, Neovim runs on the terminal. It is the lightest and fastest of all four editors, working perfectly via SSH connections and on slower machines.\nNeovim’s downsides mostly stem from its focus on minimalism. Unlike Emacs, which uses modifier keys to access shortcuts, Neovim uses something called modes. In its default mode, every key on the keyboard has a special meaning and can be combined with other keys to create complex and powerful commands. In order to actually edit the file, you must use the i key and enter “insert mode”.\nMost of the time, users are constantly switching from mode to mode and taking advantage of its many, many keybindings. While this strategy is easier on the fingers than Emacs’ modifiers, it has a significantly shallower learning curve. A common joke among novices is that it’s easier to turn off your computer than quit Vim/Neovim3.\nHow much speed and memory usage matters is up to the individual developer. Neovim might be hard to get into, but most users argue that the productivity gain from its keybindings is worth the hassle.\n\n\n2.4.2 Tips\nOf all four applications, Neovim is probably the least common when talking about R development. There isn’t much online that can help you with Nvim-R besides the official documentation. Just make sure you have installed Neovim correctly first!\nA really useful thing to do before jumping into Neovim is learning the keybindings with Vim Adventures. There are also many cheat sheets that can help in the process. Remember that almost all commands are the same in both Neovim and Vim, so you might find better online documentation when searching for “vim” instead of “neovim”."
   },
   {
-    "objectID": "r-projects.html",
-    "href": "r-projects.html",
-    "title": "3  R Projects",
-    "section": "",
-    "text": "If you followed my advice up until now, you should have created a folder in your computer for all coding projects, your .Rprofile should be as clean as possible (or ever better: untouched), and your R installation should be up-to-date. Last but not least, you should also have chosen a code editor that suits your needs.\nNow it’s time to start coding! Or rather, it’s time to start to think about coding. In this chapter I’ll talk about file paths (again) and how to set up your first R project."
-  },
-  {
     "objectID": "r-projects.html#paths-absolute-and-relative",
     "href": "r-projects.html#paths-absolute-and-relative",
     "title": "3  R Projects",
@@ -119,11 +98,32 @@
     "text": "3.4 Using R projects\nWith your new R project active, let’s take a look at what’s inside:\n\n# Directory structure of 'sample'\nfs::dir_tree()\n\n\n\n.\n├── R\n└── sample.Rproj\n\n\nOut of the box, R projects are really bare-bones: they only contain a sentinel file and a folder for R scripts. You’ll probably need at least one more folder to store your data.\n\n# Create 'data-raw' and show directory structure\nusethis::use_data_raw(\"clean\")\nfs::dir_tree()\n\n\n\n.\n├── R\n├── data-raw\n│   └── clean.R\n└── sample.Rproj\n\n\ndata-raw is a classic directory that will contain all data files (CSV, Excel, etc.) and scripts to clean these data. usethis::use_data_raw() automatically creates this directory and a sample cleaning script.\nSuppose I have a mtcars.csv file that needs a scrub. The first step is saving it to data-raw and writing the cleaning script in clean.R. Here is what that file looks like for me:\n\n# Read data\ndf <- readr::read_csv(\"data-raw/mtcars.csv\")\n\n# Clean data\ndf_clean <- dplyr::filter(df, wt < 5)\n\n# Save cleaned data\nreadr::write_csv(df, \"data-raw/mtcars_clean.csv\")\n\n\n\n\nNote how I’m only using relative paths; this way, if I ever share my R project with someone else, they won’t have to deal with broken paths. After running the script, this is what my R project looks like:\n\n# Directory structure after running 'clean.R'\nfs::dir_tree()\n\n\n\n.\n├── R\n├── data-raw\n│   ├── clean.R\n│   ├── mtcars.csv\n│   └── mtcars_clean.csv\n└── sample.Rproj\n\n\nOnce the cleaning process is done, more complex analyses should be kept in the R folder. In any case, scripts will read data-raw/mtcars_clean.csv through its relative path.\nAnd we’re off to the races! Once you start a new class or get assigned to a new project at work, simply create a new R project and use it to keep all pertinent scripts and data. Always use relative paths, store your cleaning scripts on data-raw, and don’t worry about portability ever again."
   },
   {
-    "objectID": "git.html",
-    "href": "git.html",
+    "objectID": "git.html#install-first-learn-later",
+    "href": "git.html#install-first-learn-later",
     "title": "4  Git",
-    "section": "",
-    "text": "Empty."
+    "section": "4.1 Install first, learn later",
+    "text": "4.1 Install first, learn later\nI suggest you install Git before learning what to do with it. This guarantees that you’ll be able to try everything in this chapter out, so don’t procrastinate. Happy Git has a full chapter about the installation process and corner cases you might run into, but the main points are:\n\nOn Windows and Mac you can grab an installer from the official website.\nOn Linux you can install it from your distro’s package manager. Ubuntu users, for example, can run sudo apt install git on the terminal.\n\nTo check whether you’ve installed Git correctly, verify that you have the Git Bash program (on Windows) or run the following command on your terminal (on Linux/Mac):\n\ngit --version\n\ngit version 2.39.0\n\n\nWith Git properly installed on your computer, register for a GitHub account. It will all make sense later, but this is a cloud platform that stores your Git repositories; it’s a like a Google Drive for code. The registration is fast and using GitHub is free (most of the time), so you don’t have to worry about this step.\nNow you can introduce yourself to Git. This is how we connect our local Git installation with our remote GitHub account. Jump back into R, load the usethis package, and tell Git who you are. In the command below, change NAME to your name and EMAIL to the email address you used when creating your GitHub account:\n\nlibrary(usethis)\nuse_git_config(user.name = \"NAME\", user.email = \"EMAIL\")\ngit_default_branch_configure()"
+  },
+  {
+    "objectID": "git.html#personal-access-token",
+    "href": "git.html#personal-access-token",
+    "title": "4  Git",
+    "section": "4.2 Personal Access Token",
+    "text": "4.2 Personal Access Token\nFor your local Git installation to be able to communicate with GitHub, you’ll need to provide it with your “password”. I’m using quotes here because handing out your actual password to a program in your computer would be very insecure. Instead, we’ll use something called a Personal Access Token (PAT).\nA PAT is a long string of characters and numbers that GitHub generates for you and that can be used for authentication instead of your password. There are three main advantages to this approach:\n\nPATs have very limited permissions by default, meaning that, if they end up being leaked, no one can take control of your account. Still, you should never share your PAT with anyone!\nIf someone does get their hands on one of your PATs, you can remotely deactivate them. This is much simpler than changing your password or hunting down the culprit.\nYou can also set an expiration date for each and every PAT you generate, which is the best way to prevent your credentials from leaking by way of old software and hardware you forgot to decommission.\n\nTo generate your first PAT, use usethis::create_github_token():\n\ncreate_github_token()\n\nThis command will open a template on GitHub that you can use to generate a PAT. If you don’t want to learn about the minutiae of access scopes, you can simply change the name of the PAT to something more descriptive (e.g. “Work PC PAT”) and click Create token.\nGitHub will then generate a PAT and allow you to copy it. Make sure to copy it now! For security reasons, you’ll not be able to see your PAT ever again.\nNext, you should store your PAT in a place that Git can access. Simply install the gitcreds package and run gitcreds::gitcreds_set():\n\nlibrary(gitcreds)\ngitcreds_set()\n\n? Enter password or token: YOUR_PAT_GOES_HERE\n-> Adding new credentials...\n-> Removing credentials from cache...\n-> Done.\nIf you accepted usethis’ template, then you’ll need to re-generate this PAT once a month. GitHub will make sure to warn you when a token is close to expiring and even provide you with a nice shortcut to do so, meaning you don’t have to worry about choosing the same access scopes every time. Once you have your new PAT, run gitcreds::gitcreds_set() again and choose Replace these credentials when prompted:\n\ngitcreds_set()\n\n-> Your current credentials for 'https://github.com':\n\n  protocol: https\n  host    : github.com\n  username: PersonalAccessToken\n  password: <-- hidden -->\n\n-> What would you like to do?\n\n1: Keep these credentials\n2: Replace these credentials\n3: See the password / token\n\nSelection: 2\n\n-> Removing current credentials...\n\n? Enter new password or token: YOUR_NEW_PAT_GOES_HERE\n-> Adding new credentials...\n-> Removing credentials from cache...\n-> Done.\nTo make sure your setup is in tip-top shape, you can use either usethis::git_sitrep() or gh::gh_whoami() (just make sure to install the gh package first):\n\ngh::gh_whoami()\n\n{\n  \"name\": \"NAME\",\n  \"login\": \"USERNAME\",\n  \"html_url\": \"https://github.com/USERNAME\",\n  \"scopes\": \"gist, repo, workflow\",\n  \"token\": \"PAT\"\n}"
+  },
+  {
+    "objectID": "git.html#your-first-repository",
+    "href": "git.html#your-first-repository",
+    "title": "4  Git",
+    "section": "4.3 Your first repository",
+    "text": "4.3 Your first repository\nA repository (often simply called “repo”) is a folder that uses Git for version control. Now that you have installed Git, created a GitHub account, and introduced yourself, you should be ready to create your first R project that is also a repo.\nFirst, go to https://github.com/new and chose a name for your temporary repo. Mine is going to be called test. Then add a simple description and check the Add a README file box.\n\n\n\n\n\nOnce you’re happy with your repo, click Create repository at the bottom of the page. If you did everything right, you should see a screen like in the image below.\n\n\n\n\n\nNow let’s go back to RStudio. Just like we did in Chapter 3, go to File > New Project, but this time you should select Version Control > Git. Fill the prompt with your GitHub repo’s URL and select a place to create the R project:\n\n\n\n\n\nFinally, click Create Project to finish the process. If this process didn’t work for you, make sure to check out Happy Git’s chapter on troubleshooting. If it has, your RStudio should now have a new Git pane:"
+  },
+  {
+    "objectID": "git.html#using-git-and-github",
+    "href": "git.html#using-git-and-github",
+    "title": "4  Git",
+    "section": "4.4 Using Git and GitHub",
+    "text": "4.4 Using Git and GitHub\nNow you should be more than ready to learn how to actually use Git and GitHub."
   },
   {
     "objectID": "patterns.html",
@@ -179,7 +179,7 @@
     "href": "style.html",
     "title": "Style",
     "section": "",
-    "text": "Empty."
+    "text": "https://google.github.io/styleguide/go/guide"
   },
   {
     "objectID": "beauty.html",
