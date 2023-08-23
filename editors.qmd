@@ -110,10 +110,14 @@ doesn't mean, however, that you should use it with _all_ of its factory
 defaults. Most notably, RStudio comes out of the box with the REPL console below
 the file editor, which is not most peoples' preference. In order to change this,
 click the windowed button at the top of the interface and select
-**Console on Left**. You'll thank me later.
+**Console on Right**. You'll thank me later.
 
 ```{r}
 #| echo: false
+
+##########################
+## TODO: FIX SCREENSHOT ##
+##########################
 
 knitr::include_graphics("images/rstudio_panes_screenshot.webp")
 ```
