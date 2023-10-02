@@ -115,6 +115,10 @@ click the windowed button at the top of the interface and select
 ```{r}
 #| echo: false
 
+##########################
+## TODO: FIX SCREENSHOT ##
+##########################
+
 knitr::include_graphics("images/rstudio_panes_screenshot.webp")
 ```
 
